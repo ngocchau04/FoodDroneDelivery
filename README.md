@@ -63,7 +63,7 @@ npm install
 4. Start the React Native development server:
 
 ```
-npx expo start
+npx expo start --clear
 ```
 
 ## Usage
