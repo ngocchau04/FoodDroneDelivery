@@ -1,5 +1,5 @@
 import { View, ActivityIndicator, ScrollView, Dimensions } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles'
 import { TextError, Spinner, TextDefault } from '../../components'
 import { useOrders, useAcceptOrder } from '../../ui/hooks'
@@ -9,23 +9,37 @@ import { TabBars } from '../../components/TabBars'
 import { HomeOrderDetails } from '../../components/HomeOrderDetails'
 import LottieView from 'lottie-react-native'
 import {useTranslation} from 'react-i18next'
+import { mockOrdersData, getActiveOrders, getProcessingOrders, getDeliveredOrders } from '../../data/mockOrders'
 const { width, height } = Dimensions.get('window')
 import i18next from '../../../i18n'
 const Orders = props => {
+  const [active, setActive] = useState(0)
+  
+  // Use mock data instead of real API
+  const mockData = mockOrdersData
+  const mockActiveOrders = getActiveOrders(mockData.restaurantOrders)
+  const mockProcessingOrders = getProcessingOrders(mockData.restaurantOrders)
+  const mockDeliveredOrders = getDeliveredOrders(mockData.restaurantOrders)
+  
+  // Keep original API call as fallback
   const {
     loading,
     error,
     data,
     activeOrders,
-    processingOrders,
+    processingOrders, 
     deliveredOrders,
-    active,
-    refetch,
-    setActive
+    refetch
   } = useOrders()
 
   const { loading: mutateLoading } = useAcceptOrder()
   const {t} = useTranslation()
+  
+  // Use mock data for demo
+  const displayData = mockData
+  const displayActiveOrders = mockActiveOrders.length
+  const displayProcessingOrders = mockProcessingOrders.length
+  const displayDeliveredOrders = mockDeliveredOrders.length
   if (error) return <TextError text={error.message} />
   return (
     <>
@@ -53,17 +67,12 @@ const Orders = props => {
               }
             ]}>
             <TabBars
-              newAmount={activeOrders}
-              processingAmount={processingOrders}
+              newAmount={displayActiveOrders}
+              processingAmount={displayProcessingOrders}
               activeBar={active}
               setActiveBar={setActive}
               refetch={refetch}
-              orders={
-                data &&
-                data.restaurantOrders.filter(
-                  order => order.orderStatus === 'PENDING'
-                )
-              }
+              orders={mockActiveOrders}
             />
             {loading ? (
               <View style={{ marginTop: height * 0.25 }}>
@@ -72,11 +81,8 @@ const Orders = props => {
             ) : (
               <ScrollView style={styles.scrollView}>
                 <View style={{ marginBottom: 30 }}>
-                  {active === 0 && activeOrders > 0
-                    ? data &&
-                      data.restaurantOrders
-                        .filter(order => order.orderStatus === 'PENDING')
-                        .map((order, index) => {
+                  {active === 0 && displayActiveOrders > 0
+                    ? mockActiveOrders.map((order, index) => {
                           return (
                             <HomeOrderDetails
                               key={index}
@@ -108,15 +114,8 @@ const Orders = props => {
                           />
                         </View>
                       )}
-                  {active === 1 && processingOrders > 0
-                    ? data &&
-                      data.restaurantOrders
-                        .filter(order =>
-                          ['ACCEPTED', 'ASSIGNED', 'PICKED'].includes(
-                            order.orderStatus
-                          )
-                        )
-                        .map((order, index) => {
+                  {active === 1 && displayProcessingOrders > 0
+                    ? mockProcessingOrders.map((order, index) => {
                           return (
                             <HomeOrderDetails
                               key={index}
@@ -148,11 +147,8 @@ const Orders = props => {
                           />
                         </View>
                       )}
-                  {active === 2 && deliveredOrders > 0
-                    ? data &&
-                      data.restaurantOrders
-                        .filter(order => order.orderStatus === 'DELIVERED')
-                        .map((order, index) => {
+                  {active === 2 && displayDeliveredOrders > 0
+                    ? mockDeliveredOrders.map((order, index) => {
                           return (
                             <HomeOrderDetails
                               key={index}

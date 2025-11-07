@@ -92,3 +92,54 @@ We welcome contributions from the community to improve QuickBite. If you'd like 
 
 ## Acknowledgments
 
+## To run restaurant app
+
+1. Navigate to the project directory:
+
+```
+cd enatega-multivendor-restaurant
+```
+
+2. Install the required Node.js packages:
+
+```
+npm install
+```
+
+3. Start the React Native development server:
+
+```
+npx expo start --clear
+```
+
+4. Chọn emulator thủ công
+- Khi Metro server khởi động, KHÔNG nhấn 'a' ngay. Thay vào đó:
+
+- Nhấn 'shift + a' để chọn emulator cụ thể
+--> chọn phiên bản **Pixel 4**
+Hoặc nhấn '?' để xem tất cả commands
+Tìm option "Open on specific Android device"
+
+Tài khoản demo: supermarkethares
+Password: yalla0054yalla0054
+
+## To run Admin web
+
+1. Navigate to the project directory:
+
+```
+cd enatega-multivendor-admin
+```
+
+2. Install the required Node.js packages:
+
+```
+npm install
+```
+
+3. Start the React Native development server:
+
+```
+npm run dev
+```
+

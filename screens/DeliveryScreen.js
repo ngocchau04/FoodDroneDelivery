@@ -28,7 +28,7 @@ const DeliveryScreen = () => {
                     <Text className="text-lg text-gray-400">
                         Estimated Arrival
                     </Text>
-                    <Text className="text-4xl font-bold">45-50 Minutes</Text>
+                    <Text className="text-4xl font-bold">30-45 Minutes</Text>
                 </View>
                 <Image 
                     source={require('../assets/drone-delivery.png')} 
@@ -71,19 +71,20 @@ const DeliveryScreen = () => {
             className="bg-white flex-row items-center space-x-5 h-24"
         >
             <Image 
-                source={{
-                    uri: "https://images.unsplash.com/photo-1635620201965-38f8ae7dd9df?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxVQkFLb1Q4cTFYUXx8ZW58MHx8fHx8"
-                }} 
+                // source={{
+                //     uri: "https://images.unsplash.com/photo-1635620201965-38f8ae7dd9df?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxVQkFLb1Q4cTFYUXx8ZW58MHx8fHx8"
+                // }}
+                source={require('../assets/drone-delivery.png')}  
                 className="w-12 h-12 ml-5 p-4 rounded-full bg-gray-300"
             />
             <View className="flex-1">
-                <Text className="text-xl font-bold">Jonny Blaze</Text>
-                <Text className="text-gray-400">Your Rider</Text>
+                <Text className="text-xl font-bold">Drone Delivery 1</Text>
+                <Text className="text-gray-400">Your Drone</Text>
             </View>
 
             <View className="bg-[#00CCBB] w-12 h-12 mr-5 flex items-center justify-center rounded-full">
                 <Text className="text-[#fff] text-lg font-bold">
-                    Call
+                    Got it
                 </Text>
             </View>
         </SafeAreaView>
