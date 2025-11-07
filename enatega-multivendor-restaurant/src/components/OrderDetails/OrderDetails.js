@@ -3,6 +3,7 @@ import { View, Text } from 'react-native'
 import { TextDefault } from '..'
 import styles from './styles'
 import { colors } from '../../utilities'
+import { formatVND } from '../../utilities/currencyFormatter'
 import { Configuration } from '../../ui/context'
 import { useTranslation } from 'react-i18next'
 
@@ -64,11 +65,11 @@ function OrderItems({ orderData }) {
                 textColor={colors.fontSecondColor}
                 bold>{`${item.quantity}x ${item.title}`}</TextDefault>
               <TextDefault
-                bold>{`${configuration.currencySymbol}${item.variation.price}`}</TextDefault>
+                bold>{`${formatVND(item.variation.price)}`}</TextDefault>
               {item.addons &&
                 item.addons.map((addon, index) => {
                   ;<TextDefault
-                    H6>{`${configuration.currencySymbol}${addon.price}`}</TextDefault>
+                    H6>{`${formatVND(addon.price)}`}</TextDefault>
                 })}
             </View>
           )
@@ -82,7 +83,7 @@ function OrderItems({ orderData }) {
           {t('subT')}
         </TextDefault>
         <TextDefault bold style={styles.itemText}>
-          {`${configuration.currencySymbol}${subTotal.toFixed(2)}`}
+          {formatVND(subTotal)}
         </TextDefault>
       </View>
       <View style={styles.itemRow}>
@@ -94,7 +95,7 @@ function OrderItems({ orderData }) {
           {t('tip')}
         </TextDefault>
         <TextDefault bold style={styles.itemText}>
-          {`${configuration.currencySymbol}${tipping}`}
+          {formatVND(tipping)}
         </TextDefault>
       </View>
       <View style={styles.itemRow}>
@@ -106,7 +107,7 @@ function OrderItems({ orderData }) {
           {t('taxCharges')}
         </TextDefault>
         <TextDefault bold style={styles.itemText}>
-          {`${configuration.currencySymbol}${taxationAmount}`}
+          {formatVND(taxationAmount)}
         </TextDefault>
       </View>
       <View style={styles.itemRow}>
@@ -118,7 +119,7 @@ function OrderItems({ orderData }) {
           {t('deliveryCharges')}
         </TextDefault>
         <TextDefault bold style={styles.itemText}>
-          {`${configuration.currencySymbol}${deliveryCharges}`}
+          {formatVND(deliveryCharges)}
         </TextDefault>
       </View>
 
@@ -131,7 +132,7 @@ function OrderItems({ orderData }) {
           {t('total')}
         </TextDefault>
         <TextDefault bold style={styles.itemText}>
-          {`${configuration.currencySymbol}${orderAmount}`}
+          {formatVND(orderAmount)}
         </TextDefault>
       </View>
     </View>

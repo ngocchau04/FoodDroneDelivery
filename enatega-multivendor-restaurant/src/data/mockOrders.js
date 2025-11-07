@@ -16,6 +16,21 @@ export const mockOrdersData = {
         name: "Nguyễn Văn An",
         phone: "0901234567"
       },
+      drone: {
+        id: "QB-DRONE-001",
+        name: "Falcon Prime",
+        model: "DJI Delivery Pro X1",
+        batteryLevel: 100,
+        status: "STANDBY",
+        currentLocation: {
+          lat: 10.762622,
+          lng: 106.660172,
+          address: "Warehouse Center - Quận 5"
+        },
+        estimatedDeliveryTime: 12,
+        maxPayload: "5kg",
+        flightRange: "15km"
+      },
       items: [
         {
           _id: "item_001",
@@ -56,6 +71,21 @@ export const mockOrdersData = {
         name: "Trần Thị Bình",
         phone: "0912345678"
       },
+      drone: {
+        id: "QB-DRONE-002",
+        name: "Eagle Swift",
+        model: "Parrot Professional V2",
+        batteryLevel: 95,
+        status: "PREPARING",
+        currentLocation: {
+          lat: 10.762622,
+          lng: 106.660172,
+          address: "QuickBite Kitchen - Quận 5"
+        },
+        estimatedDeliveryTime: 8,
+        maxPayload: "3kg",
+        flightRange: "12km"
+      },
       items: [
         {
           _id: "item_003",
@@ -76,7 +106,7 @@ export const mockOrdersData = {
           }
         }
       ],
-      orderAmount: 120000,
+      subtotal: 120000,
       deliveryCharges: 15000,
       total: 135000,
       paymentMethod: "CARD"
@@ -95,6 +125,23 @@ export const mockOrdersData = {
       user: {
         name: "Lê Minh Cường",
         phone: "0923456789"
+      },
+      drone: {
+        id: "QB-DRONE-003",
+        name: "Hawk Thunder",
+        model: "Autel Max Pro",
+        batteryLevel: 78,
+        status: "EN_ROUTE",
+        currentLocation: {
+          lat: 10.776889,
+          lng: 106.695556,
+          address: "Đang bay đến - Quận 3"
+        },
+        estimatedDeliveryTime: 5,
+        maxPayload: "4kg",
+        flightRange: "18km",
+        flightAltitude: "50m",
+        currentSpeed: "25 km/h"
       },
       items: [
         {
@@ -126,6 +173,24 @@ export const mockOrdersData = {
       user: {
         name: "Phạm Thị Diệu",
         phone: "0934567890"
+      },
+      drone: {
+        id: "QB-DRONE-004",
+        name: "Phoenix Ultra",
+        model: "Zipline Medical Drone",
+        batteryLevel: 62,
+        status: "DELIVERING", 
+        currentLocation: {
+          lat: 10.777229,
+          lng: 106.705028,
+          address: "Gần điểm giao hàng - Quận 1"
+        },
+        estimatedDeliveryTime: 2,
+        maxPayload: "2kg",
+        flightRange: "20km",
+        flightAltitude: "45m",
+        currentSpeed: "30 km/h",
+        deliveryProgress: "85%"
       },
       items: [
         {
@@ -167,6 +232,23 @@ export const mockOrdersData = {
         name: "Hoàng Văn Em",
         phone: "0945678901"
       },
+      drone: {
+        id: "QB-DRONE-005",
+        name: "Storm Ranger",
+        model: "Wing Copter Alpha",
+        batteryLevel: 45,
+        status: "RETURNING",
+        currentLocation: {
+          lat: 10.762622,
+          lng: 106.660172,
+          address: "Đang trở về trạm sạc"
+        },
+        estimatedReturnTime: 6,
+        maxPayload: "6kg",
+        flightRange: "25km",
+        totalFlightTime: "45 phút",
+        deliveryCompleted: true
+      },
       items: [
         {
           _id: "item_008",
@@ -206,6 +288,24 @@ export const mockOrdersData = {
       user: {
         name: "Đỗ Thị Phương",
         phone: "0956789012"
+      },
+      drone: {
+        id: "QB-DRONE-006",
+        name: "Lightning Express",
+        model: "Amazon Prime Air V3",
+        batteryLevel: 23,
+        status: "CHARGING",
+        currentLocation: {
+          lat: 10.762622,
+          lng: 106.660172,
+          address: "Trạm sạc - Hub chính"
+        },
+        estimatedChargeTime: 25,
+        maxPayload: "7kg",
+        flightRange: "30km",
+        totalFlightTime: "52 phút",
+        deliveryCompleted: true,
+        chargingProgress: "65%"
       },
       items: [
         {
@@ -248,4 +348,46 @@ export const getProcessingOrders = (orders) => {
 
 export const getDeliveredOrders = (orders) => {
   return orders.filter(order => order.orderStatus === 'DELIVERED');
+};
+
+// Helper functions for drone management
+export const getDronesByStatus = (orders, status) => {
+  return orders
+    .filter(order => order.drone && order.drone.status === status)
+    .map(order => order.drone);
+};
+
+export const getActiveDrones = (orders) => {
+  return orders
+    .filter(order => order.drone && ['PREPARING', 'EN_ROUTE', 'DELIVERING'].includes(order.drone.status))
+    .map(order => ({
+      ...order.drone,
+      orderId: order.orderId,
+      customerName: order.user.name,
+      deliveryAddress: order.deliveryAddress.deliveryAddress
+    }));
+};
+
+export const getLowBatteryDrones = (orders, threshold = 30) => {
+  return orders
+    .filter(order => order.drone && order.drone.batteryLevel <= threshold)
+    .map(order => ({
+      ...order.drone,
+      orderId: order.orderId,
+      needsCharging: order.drone.batteryLevel <= 20
+    }));
+};
+
+export const getDroneFleetStatus = (orders) => {
+  const drones = orders.filter(order => order.drone).map(order => order.drone);
+  
+  return {
+    total: drones.length,
+    active: drones.filter(d => ['PREPARING', 'EN_ROUTE', 'DELIVERING'].includes(d.status)).length,
+    standby: drones.filter(d => d.status === 'STANDBY').length,
+    charging: drones.filter(d => d.status === 'CHARGING').length,
+    returning: drones.filter(d => d.status === 'RETURNING').length,
+    averageBattery: Math.round(drones.reduce((sum, d) => sum + d.batteryLevel, 0) / drones.length),
+    lowBattery: drones.filter(d => d.batteryLevel <= 30).length
+  };
 };

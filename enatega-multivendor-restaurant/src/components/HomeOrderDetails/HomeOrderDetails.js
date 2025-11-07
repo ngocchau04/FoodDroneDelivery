@@ -3,6 +3,7 @@ import React, { useContext, useState, useRef, useEffect } from 'react'
 import styles from './styles'
 import { TextDefault } from '../../components'
 import { colors, MAX_TIME } from '../../utilities'
+import { formatVND } from '../../utilities/currencyFormatter'
 import { Badge } from 'react-native-elements'
 import { Configuration } from '../../ui/context'
 import { useSubscription, gql } from '@apollo/client'
@@ -21,7 +22,8 @@ function HomeOrderDetails(props) {
     _id,
     preparationTime,
     createdAt,
-    isRinged
+    isRinged,
+    drone
   } = props?.order
   const timeNow = new Date()
     const {t} = useTranslation()
@@ -33,6 +35,10 @@ function HomeOrderDetails(props) {
     .add(MAX_TIME, 'seconds')
     .diff(timeNow, 'seconds')
   const configuration = useContext(Configuration.Context)
+  
+  // Debug configuration
+  console.log('Configuration:', configuration)
+  console.log('Currency Symbol:', configuration.currencySymbol)
 
   // prepTime
   const prep = new Date(preparationTime)
@@ -51,6 +57,26 @@ function HomeOrderDetails(props) {
       : 0
   if (decision === acceptanceTime) {
     remainingTime = 0
+  }
+  
+  // Helper function to get battery color
+  const getBatteryColor = (level) => {
+    if (level >= 70) return colors.green
+    if (level >= 30) return colors.orange || '#FFA500'
+    return colors.red || '#FF0000'
+  }
+  
+  // Helper function to get status color
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'STANDBY': return colors.gray || '#808080'
+      case 'PREPARING': return colors.blue || '#0066CC'
+      case 'EN_ROUTE': return colors.orange || '#FFA500'
+      case 'DELIVERING': return colors.green
+      case 'RETURNING': return colors.purple || '#9900CC'
+      case 'CHARGING': return colors.yellow || '#FFD700'
+      default: return colors.fontSecondColor
+    }
   }
   useEffect(() => {
     let isSubscribed = true
@@ -123,10 +149,9 @@ function HomeOrderDetails(props) {
       </View>
       <View style={styles.itemRowBar}>
         <TextDefault style={styles.heading}>{t('orderAmount')}:</TextDefault>
-        <TextDefault
-          style={
-            styles.text
-          }>{`${configuration.currencySymbol}${orderAmount}`}:</TextDefault>
+        <TextDefault style={styles.text}>
+          {formatVND(orderAmount)}
+        </TextDefault>
       </View>
       <View style={styles.itemRowBar}>
         <TextDefault style={styles.heading}>{t('paymentMethod')}</TextDefault>
@@ -138,6 +163,53 @@ function HomeOrderDetails(props) {
           {moment(date).format('lll')}
         </TextDefault>
       </View>
+      
+      {/* Drone Information Section */}
+      {drone && (
+        <>
+          <View style={styles.itemRowBar}>
+            <TextDefault style={styles.heading}>🚁 Drone:</TextDefault>
+            <TextDefault style={styles.text}>{drone.name}</TextDefault>
+          </View>
+          <View style={styles.itemRowBar}>
+            <TextDefault style={styles.heading}>🔋 Battery level:</TextDefault>
+            <TextDefault style={[styles.text, { color: getBatteryColor(drone.batteryLevel) }]}>
+              {drone.batteryLevel}%
+            </TextDefault>
+          </View>
+          <View style={styles.itemRowBar}>
+            <TextDefault style={styles.heading}>📍 Status:</TextDefault>
+            <TextDefault style={[styles.text, { color: getStatusColor(drone.status) }]}>
+              {drone.status}
+            </TextDefault>
+          </View>
+          {drone.estimatedDeliveryTime && (
+            <View style={styles.itemRowBar}>
+              <TextDefault style={styles.heading}>⏱️ ETA:</TextDefault>
+              <TextDefault style={styles.text}>
+                {drone.estimatedDeliveryTime} phút
+              </TextDefault>
+            </View>
+          )}
+          {drone.currentSpeed && (
+            <View style={styles.itemRowBar}>
+              <TextDefault style={styles.heading}>🚀 Speed:</TextDefault>
+              <TextDefault style={styles.text}>
+                {drone.currentSpeed}
+              </TextDefault>
+            </View>
+          )}
+          {drone.deliveryProgress && (
+            <View style={styles.itemRowBar}>
+              <TextDefault style={styles.heading}>📊 Progress:</TextDefault>
+              <TextDefault style={[styles.text, { color: colors.green }]}>
+                {drone.deliveryProgress}
+              </TextDefault>
+            </View>
+          )}
+        </>
+      )}
+      
       <View
         style={{
           borderBottomColor: colors.fontSecondColor,

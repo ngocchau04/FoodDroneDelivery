@@ -161,5 +161,6 @@ export const paypalCurrencies = [
   { currency: 'SEK', currencySymbol: 'kr', type: 'PAYPAL' },
   { currency: 'CHF', currencySymbol: 'Fr', type: 'PAYPAL' },
   { currency: 'THB', currencySymbol: '฿', type: 'PAYPAL' },
+  { currency: 'VND', currencySymbol: '₫', type: 'PAYPAL' },
   { currency: 'USD', currencySymbol: '$', type: 'PAYPAL' }
 ]
