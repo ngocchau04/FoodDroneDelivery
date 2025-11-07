@@ -47,17 +47,30 @@ function OrderItems({ orderData }) {
   const {
     items,
     orderAmount,
-    tipping,
+    tipping = 0,
     deliveryCharges,
-    taxationAmount
+    taxationAmount = 0
   } = orderData
   const configuration = useContext(Configuration.Context)
+  
+  // Calculate subtotal correctly from items
   let subTotal = 0
+  if (items) {
+    items.forEach(item => {
+      subTotal += (item.variation.price || 0) * (item.quantity || 1)
+      if (item.addons) {
+        item.addons.forEach(addon => {
+          subTotal += (addon.price || 0)
+        })
+      }
+    })
+  }
+  
   return (
     <View style={[styles.cardContainer, { marginTop: 30, marginBottom: 45 }]}>
       {items &&
         items.map((item, index) => {
-          subTotal = subTotal + item.variation.price
+          const itemTotal = (item.variation.price || 0) * (item.quantity || 1)
           return (
             <View style={styles.itemRowBar} key={index}>
               <TextDefault
@@ -65,12 +78,13 @@ function OrderItems({ orderData }) {
                 textColor={colors.fontSecondColor}
                 bold>{`${item.quantity}x ${item.title}`}</TextDefault>
               <TextDefault
-                bold>{`${formatVND(item.variation.price)}`}</TextDefault>
+                bold>{formatVND(itemTotal)}</TextDefault>
               {item.addons &&
-                item.addons.map((addon, index) => {
-                  ;<TextDefault
-                    H6>{`${formatVND(addon.price)}`}</TextDefault>
-                })}
+                item.addons.map((addon, addonIndex) => (
+                  <TextDefault
+                    key={addonIndex}
+                    H6>{formatVND(addon.price)}</TextDefault>
+                ))}
             </View>
           )
         })}
@@ -132,7 +146,7 @@ function OrderItems({ orderData }) {
           {t('total')}
         </TextDefault>
         <TextDefault bold style={styles.itemText}>
-          {formatVND(orderAmount)}
+          {formatVND(subTotal + (deliveryCharges || 0) + (tipping || 0) + (taxationAmount || 0))}
         </TextDefault>
       </View>
     </View>

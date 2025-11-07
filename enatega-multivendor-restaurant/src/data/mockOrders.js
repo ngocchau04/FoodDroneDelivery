@@ -38,7 +38,8 @@ export const mockOrdersData = {
           description: "Phở bò truyền thống với thịt tái",
           quantity: 2,
           variation: {
-            title: "Size Lớn"
+            title: "Size Lớn",
+            price: 65000
           }
         },
         {
@@ -47,13 +48,16 @@ export const mockOrdersData = {
           description: "Trà đá truyền thống",
           quantity: 1,
           variation: {
-            title: "Size Nhỏ"
+            title: "Size Nhỏ",
+            price: 10000
           }
         }
       ],
-      orderAmount: 150000,
+      orderAmount: 140000,  // Subtotal: 2x65000 + 1x10000 = 140000
       deliveryCharges: 20000,
-      total: 170000,
+      total: 160000,  // 140000 + 20000 = 160000
+      tipping: 0,
+      taxationAmount: 0,
       paymentMethod: "COD"
     },
     {
@@ -93,7 +97,8 @@ export const mockOrdersData = {
           description: "Cơm gà theo phong cách Hainan",
           quantity: 1,
           variation: {
-            title: "Bình thường"
+            title: "Bình thường",
+            price: 85000
           }
         },
         {
@@ -102,13 +107,16 @@ export const mockOrdersData = {
           description: "Nước cam tươi ép",
           quantity: 2,
           variation: {
-            title: "Size Vừa"
+            title: "Size Vừa",
+            price: 15000
           }
         }
       ],
-      subtotal: 120000,
+      orderAmount: 115000,  // Subtotal: 1x85000 + 2x15000 = 115000  
       deliveryCharges: 15000,
-      total: 135000,
+      total: 130000,  // 115000 + 15000 = 130000
+      tipping: 0,
+      taxationAmount: 0,
       paymentMethod: "CARD"
     },
     {
@@ -150,13 +158,16 @@ export const mockOrdersData = {
           description: "Bánh mì kẹp thịt nướng đặc biệt",
           quantity: 3,
           variation: {
-            title: "Đầy đủ"
+            title: "Đầy đủ",
+            price: 25000
           }
         }
       ],
-      orderAmount: 90000,
+      orderAmount: 75000,  // Subtotal: 3x25000 = 75000
       deliveryCharges: 12000,
-      total: 102000,
+      total: 87000,  // 75000 + 12000 = 87000
+      tipping: 0,
+      taxationAmount: 0,
       paymentMethod: "COD"
     },
     {
@@ -199,7 +210,8 @@ export const mockOrdersData = {
           description: "Bún bò Huế cay truyền thống",
           quantity: 1,
           variation: {
-            title: "Cay vừa"
+            title: "Cay vừa",
+            price: 55000
           }
         },
         {
@@ -208,13 +220,16 @@ export const mockOrdersData = {
           description: "Chả cá thêm",
           quantity: 1,
           variation: {
-            title: "Phần nhỏ"
+            title: "Phần nhỏ",
+            price: 20000
           }
         }
       ],
-      orderAmount: 85000,
+      orderAmount: 75000,  // Subtotal: 1x55000 + 1x20000 = 75000
       deliveryCharges: 10000,
-      total: 95000,
+      total: 85000,  // 75000 + 10000 = 85000
+      tipping: 0,
+      taxationAmount: 0,
       paymentMethod: "CARD"
     },
     {
@@ -256,7 +271,8 @@ export const mockOrdersData = {
           description: "Cà phê sữa đá đậm đà",
           quantity: 2,
           variation: {
-            title: "Đậm"
+            title: "Đậm",
+            price: 25000
           }
         },
         {
@@ -265,13 +281,16 @@ export const mockOrdersData = {
           description: "Bánh flan caramel",
           quantity: 1,
           variation: {
-            title: "Bình thường"
+            title: "Bình thường",
+            price: 15000
           }
         }
       ],
-      orderAmount: 65000,
+      orderAmount: 65000,  // Subtotal: 2x25000 + 1x15000 = 65000
       deliveryCharges: 8000,
-      total: 73000,
+      total: 73000,  // 65000 + 8000 = 73000
+      tipping: 0,
+      taxationAmount: 0,
       paymentMethod: "COD"
     },
     {
@@ -314,7 +333,8 @@ export const mockOrdersData = {
           description: "Gỏi cuốn tươi với tôm thịt",
           quantity: 4,
           variation: {
-            title: "Combo"
+            title: "Combo",
+            price: 30000
           }
         },
         {
@@ -323,13 +343,16 @@ export const mockOrdersData = {
           description: "Nước dừa tươi mát",
           quantity: 2,
           variation: {
-            title: "Trái to"
+            title: "Trái to",
+            price: 20000
           }
         }
       ],
-      orderAmount: 140000,
+      orderAmount: 160000,  // Subtotal: 4x30000 + 2x20000 = 160000
       deliveryCharges: 18000,
-      total: 158000,
+      total: 178000,  // 160000 + 18000 = 178000
+      tipping: 0,
+      taxationAmount: 0,
       paymentMethod: "CARD"
     }
   ]
