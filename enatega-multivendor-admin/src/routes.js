@@ -66,15 +66,15 @@ var routes = [
     appearInSidebar: true,
     admin: true
   },
-  {
-    path: '/vendors',
-    name: 'Vendors',
-    icon: VendorIcon,
-    component: Vendors,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
+  // {
+  //   path: '/vendors',
+  //   name: 'Vendors',
+  //   icon: VendorIcon,
+  //   component: Vendors,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
   {
     path: '/restaurants',
     name: 'Restaurants',
@@ -102,42 +102,42 @@ var routes = [
     appearInSidebar: true,
     admin: true
   },
-  {
-    path: '/riders',
-    name: 'Riders',
-    icon: RiderIcon,
-    component: Riders,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
-  {
-    path: '/configuration',
-    name: 'Configuration',
-    icon: ConfigurationIcon,
-    component: Configuration,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
-  {
-    path: '/coupons',
-    name: 'Coupons',
-    icon: CouponsIcon,
-    component: Coupons,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
-  {
-    path: '/cuisines',
-    name: 'Cuisines',
-    icon: CouponsIcon,
-    component: Cuisines,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
+  // {
+  //   path: '/riders',
+  //   name: 'Riders',
+  //   icon: RiderIcon,
+  //   component: Riders,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
+  // {
+  //   path: '/configuration',
+  //   name: 'Configuration',
+  //   icon: ConfigurationIcon,
+  //   component: Configuration,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
+  // {
+  //   path: '/coupons',
+  //   name: 'Coupons',
+  //   icon: CouponsIcon,
+  //   component: Coupons,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
+  // {
+  //   path: '/cuisines',
+  //   name: 'Cuisines',
+  //   icon: CouponsIcon,
+  //   component: Cuisines,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
   // {
   //   path: '/banner',
   //   name: 'Banners',
@@ -147,60 +147,60 @@ var routes = [
   //   appearInSidebar: true,
   //   admin: true
   // },
-  {
-    path: '/tipping',
-    name: 'Tipping',
-    icon: TippingsIcon,
-    component: Tipping,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
-  {
-    path: '/zones',
-    name: 'Zone',
-    icon: ZonesIcon,
-    component: Zone,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
-  {
-    path: '/dispatch',
-    name: 'Dispatch',
-    icon: DeliveryIcon,
-    component: Dispatch,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
-  {
-    path: '/notifications',
-    name: 'Notifications',
-    icon: NotificationsIcon,
-    component: Notifications,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
-  {
-    path: '/commission',
-    name: 'Commission Rates',
-    icon: CommissionsIcon,
-    component: Commission,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
-  {
-    path: '/withdraw/',
-    name: 'Withdraw Requests',
-    icon: RequestIcon,
-    component: WithdrawRequest,
-    layout: '/super_admin',
-    appearInSidebar: true,
-    admin: true
-  },
+  // {
+  //   path: '/tipping',
+  //   name: 'Tipping',
+  //   icon: TippingsIcon,
+  //   component: Tipping,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
+  // {
+  //   path: '/zones',
+  //   name: 'Zone',
+  //   icon: ZonesIcon,
+  //   component: Zone,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
+  // {
+  //   path: '/dispatch',
+  //   name: 'Dispatch',
+  //   icon: DeliveryIcon,
+  //   component: Dispatch,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
+  // {
+  //   path: '/notifications',
+  //   name: 'Notifications',
+  //   icon: NotificationsIcon,
+  //   component: Notifications,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
+  // {
+  //   path: '/commission',
+  //   name: 'Commission Rates',
+  //   icon: CommissionsIcon,
+  //   component: Commission,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
+  // {
+  //   path: '/withdraw/',
+  //   name: 'Withdraw Requests',
+  //   icon: RequestIcon,
+  //   component: WithdrawRequest,
+  //   layout: '/super_admin',
+  //   appearInSidebar: true,
+  //   admin: true
+  // },
   {
     path: '/list',
     name: 'List',

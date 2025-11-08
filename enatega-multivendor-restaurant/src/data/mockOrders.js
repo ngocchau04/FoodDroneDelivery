@@ -34,8 +34,8 @@ export const mockOrdersData = {
       items: [
         {
           _id: "item_001",
-          title: "Phở Bò Tái",
-          description: "Phở bò truyền thống với thịt tái",
+          title: "Pepperoni Paradise",
+          description: "Pizza pepperoni với phô mai mozzarella",
           quantity: 2,
           variation: {
             title: "Size Lớn",
@@ -44,7 +44,7 @@ export const mockOrdersData = {
         },
         {
           _id: "item_002", 
-          title: "Trà Đá",
+          title: "Tea iced Cup",
           description: "Trà đá truyền thống",
           quantity: 1,
           variation: {
@@ -93,8 +93,8 @@ export const mockOrdersData = {
       items: [
         {
           _id: "item_003",
-          title: "Cơm Gà Hainanese", 
-          description: "Cơm gà theo phong cách Hainan",
+          title: "Hawaiian Heaven", 
+          description: "Pizza Hawaii với dứa và giăm bông",
           quantity: 1,
           variation: {
             title: "Bình thường",
@@ -103,7 +103,7 @@ export const mockOrdersData = {
         },
         {
           _id: "item_004",
-          title: "Nước Cam Ép",
+          title: "Orange Juice",
           description: "Nước cam tươi ép",
           quantity: 2,
           variation: {
@@ -154,18 +154,18 @@ export const mockOrdersData = {
       items: [
         {
           _id: "item_005",
-          title: "Bánh Mì Thịt Nướng",
-          description: "Bánh mì kẹp thịt nướng đặc biệt",
+          title: "Cheese Pizza",
+          description: "Pizza phô mai với lớp phô mai mozzarella",
           quantity: 3,
           variation: {
             title: "Đầy đủ",
-            price: 25000
+            price: 125000
           }
         }
       ],
-      orderAmount: 75000,  // Subtotal: 3x25000 = 75000
+      orderAmount: 375000,  // Subtotal: 3x125000 = 375000
       deliveryCharges: 12000,
-      total: 87000,  // 75000 + 12000 = 87000
+      total: 495000,  // 375000 + 12000 = 495000
       tipping: 0,
       taxationAmount: 0,
       paymentMethod: "COD"
@@ -206,8 +206,8 @@ export const mockOrdersData = {
       items: [
         {
           _id: "item_006",
-          title: "Bún Bò Huế",
-          description: "Bún bò Huế cay truyền thống",
+          title: "Cheese and Pepperoni",
+          description: "Pizza phô mai và pepperoni",
           quantity: 1,
           variation: {
             title: "Cay vừa",
@@ -216,8 +216,8 @@ export const mockOrdersData = {
         },
         {
           _id: "item_007",
-          title: "Chả Cá",
-          description: "Chả cá thêm",
+          title: "Cheese Plus",
+          description: "Phô mai thêm",
           quantity: 1,
           variation: {
             title: "Phần nhỏ",
@@ -267,8 +267,8 @@ export const mockOrdersData = {
       items: [
         {
           _id: "item_008",
-          title: "Cà Phê Sữa Đá",
-          description: "Cà phê sữa đá đậm đà",
+          title: "Americano",
+          description: "Cà phê đen",
           quantity: 2,
           variation: {
             title: "Đậm",
@@ -277,7 +277,7 @@ export const mockOrdersData = {
         },
         {
           _id: "item_009",
-          title: "Bánh Flan",
+          title: "Flan Caramel",
           description: "Bánh flan caramel",
           quantity: 1,
           variation: {
@@ -329,8 +329,8 @@ export const mockOrdersData = {
       items: [
         {
           _id: "item_010",
-          title: "Gỏi Cuốn Tôm Thịt",
-          description: "Gỏi cuốn tươi với tôm thịt",
+          title: "Sushi Rolls",
+          description: "Sushi cuộn tươi",
           quantity: 4,
           variation: {
             title: "Combo",
@@ -339,7 +339,7 @@ export const mockOrdersData = {
         },
         {
           _id: "item_011",
-          title: "Nước Dừa Tươi",
+          title: "Coconut Juice",
           description: "Nước dừa tươi mát",
           quantity: 2,
           variation: {

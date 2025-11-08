@@ -90,18 +90,18 @@ const SuperAdminDashboard = props => {
         borderColor: theme.palette.warning.dark,
         backgroundColor: theme.palette.warning.dark
       },
-      {
-        label: t('Vendors'),
-        data: [8, 7, 6, 5, 4, 3, 2],
-        borderColor: theme.palette.secondary.lightest,
-        backgroundColor: theme.palette.secondary.lightest
-      },
-      {
-        label: t('Riders'),
-        data: [2, 4, 6, 8, 7, 4, 1],
-        borderColor: 'black',
-        backgroundColor: 'black'
-      },
+      // {
+      //   label: t('Vendors'),
+      //   data: [8, 7, 6, 5, 4, 3, 2],
+      //   borderColor: theme.palette.secondary.lightest,
+      //   backgroundColor: theme.palette.secondary.lightest
+      // },
+      // {
+      //   label: t('Riders'),
+      //   data: [2, 4, 6, 8, 7, 4, 1],
+      //   borderColor: 'black',
+      //   backgroundColor: 'black'
+      // },
       {
         label: t('Users'),
         data: [9, 6, 4, 2, 3, 5, 7],
@@ -198,7 +198,7 @@ const SuperAdminDashboard = props => {
                 height={40}
               />
             </BoxCard>
-            <BoxCard>
+            {/* <BoxCard>
               <Typography sx={headSty}>{t('TotalVendors')}</Typography>
               <Typography sx={sty}>
                 {loadingVendors ? '...' : vendors.vendors.length}
@@ -210,7 +210,7 @@ const SuperAdminDashboard = props => {
                 width={30}
                 height={40}
               />
-            </BoxCard>
+            </BoxCard> */}
             <BoxCard>
               <Typography sx={headSty}>{t('TotalRestaurants')}</Typography>
               <Typography sx={sty}>
@@ -224,7 +224,7 @@ const SuperAdminDashboard = props => {
                 height={40}
               />
             </BoxCard>
-            <BoxCard>
+            {/* <BoxCard>
               <Typography sx={headSty}>{t('TotalRiders')}</Typography>
               <Typography sx={sty}>
                 {loadingRiders ? '...' : riders.riders.length}
@@ -236,7 +236,7 @@ const SuperAdminDashboard = props => {
                 width={30}
                 height={40}
               />
-            </BoxCard>
+            </BoxCard> */}
           </Grid>
         </Grid>
       </Container>

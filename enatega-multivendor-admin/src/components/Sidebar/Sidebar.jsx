@@ -79,11 +79,11 @@ function Sidebar(props) {
                     {t('RESTAURANT')}
                   </Typography>
                 ) : null}
-                {key === 19 ? (
+                {/* {key === 19 ? (
                   <Typography className={classes.headingText} variant="h3">
                     {t('MANAGEMENT')}
                   </Typography>
-                ) : null}
+                ) : null} */}
                 <Link
                   className={[
                     classes.rowDisplay,

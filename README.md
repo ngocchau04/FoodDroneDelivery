@@ -45,7 +45,7 @@ To run the **QuickBite** app locally, follow these steps:
 1. Clone the repository to your local machine:
 
 ```shell
-git clone https://github.com/your-username/quickbite.git
+https://github.com/ngocchau04/FoodDroneDelivery.git
 ```
 
 2. Navigate to the project directory:
@@ -140,6 +140,6 @@ npm install
 3. Start the React Native development server:
 
 ```
-npm run dev
+npm start
 ```
 
