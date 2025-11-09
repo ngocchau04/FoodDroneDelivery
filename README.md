@@ -21,13 +21,6 @@
 ![Screenshot](./assets/screenshots/first-ss.png) 
 ![Screenshot](./assets/screenshots/second-ss.png)
 
-### Customer Mobile App
-![Home Screen](./assets/screenshots/first-ss.png)
-*Browse restaurants and featured dishes*
-
-![Restaurant & Menu](./assets/screenshots/second-ss.png)
-*Detailed restaurant view with menu selection*
-
 ### Advanced Features
 ![Order Basket](./assets/screenshots/OrderBasketApp.png)
 *Smart basket with currency conversion and order summary*
