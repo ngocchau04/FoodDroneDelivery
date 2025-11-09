@@ -19,6 +19,11 @@ export default function BasketIcon() {
         currency: "INR",
     });
 
+    const vietnameseDong = Intl.NumberFormat("vi-VN", {
+        style: "currency",
+        currency: "VND",
+    });
+
     if(items.length === 0) return null;
 
   return (
@@ -32,7 +37,8 @@ export default function BasketIcon() {
             </Text>
             <Text className="flex-1 text-white font-extrabold text-lg text-center">View Basket</Text>
             <Text className="text-lg text-white font-extrabold">
-              {rupeeIndian.format(basketTotal)}
+              {/* {rupeeIndian.format(basketTotal)} */}
+              {vietnameseDong.format(basketTotal)}
             </Text>
       </TouchableOpacity>
     </View>

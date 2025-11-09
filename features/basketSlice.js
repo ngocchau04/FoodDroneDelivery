@@ -36,10 +36,30 @@ export const selectBasketItems = (state) => state.basket.items;
 export const selectBasketItemsWithId = (state, id) =>
   state.basket.items.filter((item) => item.id === id);
 
-// export const selectBasketTotal = (state) => state.basket.items.reduce((total, item) => total += item.price, 0);
-export const selectBasketTotal = (state) => {
-  return state.basket.items.reduce((total, item) => total + item.price, 0);
+// // export const selectBasketTotal = (state) => state.basket.items.reduce((total, item) => total += item.price, 0);
+// export const selectBasketTotal = (state) => {
+//   return state.basket.items.reduce((total, item) => total + item.price, 0);
+// };
+
+// Convert INR to VND (1 INR ≈ 300 VND)
+const convertINRtoVND = (priceINR) => {
+  return Math.round(priceINR * 300); // 300 INR → 90,000 VND
 };
 
+// Selector cho items với giá đã convert
+export const selectBasketItemsVND = (state) => {
+  return state.basket.items.map(item => ({
+    ...item,
+    price: convertINRtoVND(item.price),
+    originalPrice: item.price // Giữ giá gốc nếu cần
+  }));
+};
+
+export const selectBasketTotal = (state) => {
+  return state.basket.items.reduce((total, item) => {
+    const priceInVND = convertINRtoVND(item.price);
+    return total + priceInVND;
+  }, 0);
+};
 
 export default basketSlice.reducer;

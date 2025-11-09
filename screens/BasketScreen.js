@@ -29,6 +29,11 @@ const BasketScreen = () => {
         currency: "INR",
     });
 
+    const vietnameseDong = Intl.NumberFormat("vi-VN", {
+        style: "currency",
+        currency: "VND",
+    });
+
   return (
     <SafeAreaView className="flex-1 bg-white pt-5">
       <View className="flex-1 bg-gray-100">
@@ -75,7 +80,8 @@ const BasketScreen = () => {
                     <Text className="flex-1">{items[0]?.name}</Text>
 
                     <Text className="flex text-gray-600">
-                        {rupeeIndian.format(items[0]?.price)}
+                        {/* {rupeeIndian.format(items[0]?.price)} */}
+                        {vietnameseDong.format(items[0]?.price)}
                     </Text>
 
                     <TouchableOpacity>
@@ -94,21 +100,24 @@ const BasketScreen = () => {
             <View className="flex-row justify-between">
                 <Text className="text-gray-400">Subtotal</Text>
                 <Text className="text-gray-400">
-                    {rupeeIndian.format(basketTotal)}
+                    {/* {rupeeIndian.format(basketTotal)} */}
+                    {vietnameseDong.format(basketTotal)}
                 </Text>
             </View>
 
             <View className="flex-row justify-between">
                 <Text className="text-gray-400">Delivery Fee</Text>
                 <Text className="text-gray-400">
-                    {rupeeIndian.format(50)}
+                    {/* {rupeeIndian.format(50)} */}
+                    {vietnameseDong.format(50)}
                 </Text>
             </View>
 
             <View className="flex-row justify-between">
                 <Text>Order Total</Text>
                 <Text className="font-extrabold">
-                    {rupeeIndian.format(basketTotal+50)}
+                    {/* {rupeeIndian.format(basketTotal+50)} */}
+                    {vietnameseDong.format(basketTotal+50)}
                 </Text>
             </View>
 

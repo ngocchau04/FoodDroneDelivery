@@ -21,6 +21,11 @@ export default function DishRow({ id, name, description, price, image }) {
       currency: "INR",
   });
 
+  const vietnameseDong = Intl.NumberFormat("vi-VN", {
+        style: "currency",
+        currency: "VND",
+    });
+
   const addItemsToBasket = () => {
     dispatch(addToBasket({id, name, description, price, image}))
   };
@@ -43,7 +48,8 @@ export default function DishRow({ id, name, description, price, image }) {
             <Text className="text-gray-400">{description}</Text>
             {/* Add here currency formatter */}
             <Text className="text-gray-400 mt-1">
-              {rupeeIndian.format(price)}
+              {/* {rupeeIndian.format(price)} */}
+              {vietnameseDong.format(price)}
             </Text>
         </View>
 
