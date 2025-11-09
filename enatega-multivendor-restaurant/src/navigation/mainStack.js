@@ -14,6 +14,7 @@ import { gql, useApolloClient } from '@apollo/client'
 import { orders } from '../apollo'
 import { useNavigation } from '@react-navigation/native'
 import { SelectLanguage } from '../screens/Setting'
+import DroneManagement from '../screens/DroneManagement' // add drone management screen
 import moment from 'moment'
 import {useTranslation} from 'react-i18next'
 import { MAX_TIME } from '../utilities'
@@ -126,10 +127,17 @@ function TabNavigator() {
         })}
       />
       <Tabs.Screen name={t('titleHome')} component={StackNavigator} />
+      <Tabs.Screen 
+        name='DroneManagement' 
+        options={{
+          tabBarLabel: t('Drone')
+        }} 
+        component={DroneManagement} 
+      />
       {/* {Platform.OS === 'ios' ? null :  */}
-      <Tabs.Screen name='Language' options={{
+      {/* <Tabs.Screen name='Language' options={{
           tabBarLabel: t('language')
-        }} component={SelectLanguage} />
+        }} component={SelectLanguage} /> */}
         {/* } */}
     </Tabs.Navigator>
   )

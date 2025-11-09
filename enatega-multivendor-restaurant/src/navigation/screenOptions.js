@@ -31,15 +31,16 @@ const tabIcon = route => ({
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15
   },
-  tabBarIcon: ({ color, size }) => {
+  tabBarIcon: ({ focused, color, size }) => {
     let iconName
     const {t} = useTranslation()
     if (route.name === t('titleHome')) {
       iconName = 'home'
     } else if (route.name === t('titleProfile')) {
       iconName = 'user'
-    }
-    else if (route.name === 'Language') {
+    } else if (route.name === 'DroneManagement') {
+      iconName = 'paper-plane' // Add drone icon
+    } else if (route.name === 'Language') {
       iconName = 'language'
     }
     return (
