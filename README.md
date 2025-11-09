@@ -1,4 +1,4 @@
-# QuickBite: React Native Food Delivery App
+# FoodDroneDelivery: React Native Food Delivery App
 
 ![Screenshot](./assets/screenshots/ss-main.png)
 
@@ -15,11 +15,55 @@
 
 ## Description
 
-**QuickBite** is a React Native mobile application designed for food delivery. It serves as a clone of popular food delivery services, providing users with a convenient platform to order and receive their favorite meals. While the app is currently in its initial stage, it offers essential functionalities for browsing menus, placing orders, and tracking deliveries.
+**FoodDroneDelivery** is a React Native mobile application designed for food delivery. It serves as a clone of popular food delivery services, providing users with a convenient platform to order and receive their favorite meals. While the app is currently in its initial stage, it offers essential functionalities for browsing menus, placing orders, and tracking deliveries.
 
 ## Screenshots Group
 ![Screenshot](./assets/screenshots/first-ss.png) 
-![Screenshot](./assets/screenshots/second-ss.png) 
+![Screenshot](./assets/screenshots/second-ss.png)
+
+### Customer Mobile App
+![Home Screen](./assets/screenshots/first-ss.png)
+*Browse restaurants and featured dishes*
+
+![Restaurant & Menu](./assets/screenshots/second-ss.png)
+*Detailed restaurant view with menu selection*
+
+### Advanced Features
+![Order Basket](./assets/screenshots/OrderBasketApp.png)
+*Smart basket with currency conversion and order summary*
+
+![Drone Delivery Map](./assets/screenshots/DroneMap.png)
+*Real-time drone delivery tracking with flight simulation*
+
+![Delivery Progress](./assets/screenshots/DeliveryDetails.png)
+*Order preparation and delivery status monitoring*
+
+### Restaurant Management System
+![New Orders](./assets/screenshots/AcceptOrRejectNewOrder.png)
+*Order acceptance and management interface*
+
+![Restaurant Dashboard](./assets/screenshots/Dashboard.png)
+*Comprehensive restaurant performance dashboard*
+
+![Menu Management](./assets/screenshots/MenuRestaurant.png)
+*Easy-to-use menu and item management*
+
+![Order Processing](./assets/screenshots/ProcessingOrder.png)
+*Real-time order processing and status updates*
+
+![Restaurant Profile](./assets/screenshots/ProfileRestaurant.png)
+*Restaurant profile and settings management*
+
+### Admin Web Dashboard
+![User Management](./assets/screenshots/UserManagement.png)
+*Comprehensive user and account management*
+
+![Restaurant Management](./assets/screenshots/RestaurantManagement.png)
+*Platform-wide restaurant oversight and control*
+
+![Order Tracking](./assets/screenshots/UserDashboard.png)
+*System-wide order monitoring and analytics*
+
 
 ## Features
 
@@ -31,7 +75,7 @@
 
 ## Technologies Used
 
-**QuickBite** is built using the following technologies:
+**FoodDroneDelivery** is built using the following technologies:
 
 - **React Native** - For building cross-platform mobile applications.
 - **JavaScript** - As the primary programming language.
@@ -40,7 +84,7 @@ authentication.
 
 ## Installation
 
-To run the **QuickBite** app locally, follow these steps:
+To run the **FoodDroneDelivery** app locally, follow these steps:
 
 1. Clone the repository to your local machine:
 
@@ -51,7 +95,7 @@ https://github.com/ngocchau04/FoodDroneDelivery.git
 2. Navigate to the project directory:
 
 ```
-cd quickbite
+cd FoodDroneDelivery
 ```
 
 3. Install the required Node.js packages:
@@ -68,7 +112,7 @@ npx expo start --clear
 
 ## Usage
 
-1. Open the **QuickBite** app on your mobile device or emulator.
+1. Open the **FoodDroneDelivery** app on your mobile device or emulator.
 2. Explore the menu options and select your desired dishes.
 3. Place your order and track its progress in real-time.
 
@@ -82,7 +126,7 @@ The project structure is organized as follows:
 
 
 ## Contributing
-We welcome contributions from the community to improve QuickBite. If you'd like to contribute, please follow these guidelines:
+We welcome contributions from the community to improve FoodDroneDelivery. If you'd like to contribute, please follow these guidelines:
 
 - Fork the repository.
 - Create a new branch for your feature or bug fix.
