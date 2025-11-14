@@ -88,7 +88,7 @@ https://github.com/ngocchau04/FoodDroneDelivery.git
 2. Navigate to the project directory:
 
 ```
-cd FoodDroneDelivery
+cd customer
 ```
 
 3. Install the required Node.js packages:
