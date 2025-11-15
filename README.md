@@ -1,6 +1,6 @@
 # FoodDroneDelivery: React Native Food Delivery App
 
-![Screenshot](../assets/screenshots/ss-main.png)
+![Screenshot](./customer/assets/screenshots/ss-main.png)
 
 ## Table of Contents
 
@@ -18,43 +18,43 @@
 **FoodDroneDelivery** is a React Native mobile application designed for food delivery. It serves as a clone of popular food delivery services, providing users with a convenient platform to order and receive their favorite meals. While the app is currently in its initial stage, it offers essential functionalities for browsing menus, placing orders, and tracking deliveries.
 
 ## Screenshots Group
-![Screenshot](.customer/assets/screenshots/first-ss.png) 
-![Screenshot](./assets/screenshots/second-ss.png)
+![Screenshot](./customer/assets/screenshots/first-ss.png) 
+![Screenshot](./customer/assets/screenshots/second-ss.png)
 
 ### Advanced Features
-![Order Basket](./assets/screenshots/OrderBasketApp.png)
+![Order Basket](./customer/assets/screenshots/OrderBasketApp.png)
 *Smart basket with currency conversion and order summary*
 
-![Drone Delivery Map](./assets/screenshots/DroneMap.png)
+![Drone Delivery Map](./customer/assets/screenshots/DroneMap.png)
 *Real-time drone delivery tracking with flight simulation*
 
-![Delivery Progress](./assets/screenshots/DeliveryDetails.png)
+![Delivery Progress](./customer/assets/screenshots/DeliveryDetails.png)
 *Order preparation and delivery status monitoring*
 
 ### Restaurant Management System
-![New Orders](./assets/screenshots/AcceptOrRejectNewOrder.png)
+![New Orders](./customer/assets/screenshots/AcceptOrRejectNewOrder.png)
 *Order acceptance and management interface*
 
-![Restaurant Dashboard](./assets/screenshots/Dashboard.png)
+![Restaurant Dashboard](./customer/assets/screenshots/Dashboard.png)
 *Comprehensive restaurant performance dashboard*
 
-![Menu Management](./assets/screenshots/MenuRestaurant.png)
+![Menu Management](./customer/assets/screenshots/MenuRestaurant.png)
 *Easy-to-use menu and item management*
 
-![Order Processing](./assets/screenshots/ProcessingOrder.png)
+![Order Processing](./customer/assets/screenshots/ProcessingOrder.png)
 *Real-time order processing and status updates*
 
-![Restaurant Profile](./assets/screenshots/ProfileRestaurant.png)
+![Restaurant Profile](./customer/assets/screenshots/ProfileRestaurant.png)
 *Restaurant profile and settings management*
 
 ### Admin Web Dashboard
-![User Management](./assets/screenshots/UserManagement.png)
+![User Management](./customer/assets/screenshots/UserManagement.png)
 *Comprehensive user and account management*
 
-![Restaurant Management](./assets/screenshots/RestaurantManagement.png)
+![Restaurant Management](./customer/assets/screenshots/RestaurantManagement.png)
 *Platform-wide restaurant oversight and control*
 
-![Order Tracking](./assets/screenshots/UserDashboard.png)
+![Order Tracking](./customer/assets/screenshots/UserDashboard.png)
 *System-wide order monitoring and analytics*
 
 
@@ -185,7 +185,7 @@ npm start
 2. Turn on USB Debugging like the intruction
 3. cd customer (cd enatega-multivendor-restaurant)
 4. plug in the cable between laptop (or PC) - which is not only charging
-5. run "npx expo start run:android"
+5. run "npx expo run:android"
 6. You can turn of USb debugging and plug out the cable and run app to use
 
 
