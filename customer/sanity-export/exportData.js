@@ -4,7 +4,7 @@ import fs from "fs";
 
 // tạo client kết nối tới project Sanity public
 const client = createClient({
-  projectId: "qxr3am6t", // projectId từ app QuickBite
+  projectId: "3glkq9kp", // projectId từ app QuickBite
   dataset: "production",
   apiVersion: "2022-02-01",
   useCdn: true, // chỉ đọc public data

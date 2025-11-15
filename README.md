@@ -1,6 +1,6 @@
 # FoodDroneDelivery: React Native Food Delivery App
 
-![Screenshot](./assets/screenshots/ss-main.png)
+![Screenshot](../assets/screenshots/ss-main.png)
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@
 **FoodDroneDelivery** is a React Native mobile application designed for food delivery. It serves as a clone of popular food delivery services, providing users with a convenient platform to order and receive their favorite meals. While the app is currently in its initial stage, it offers essential functionalities for browsing menus, placing orders, and tracking deliveries.
 
 ## Screenshots Group
-![Screenshot](./assets/screenshots/first-ss.png) 
+![Screenshot](.customer/assets/screenshots/first-ss.png) 
 ![Screenshot](./assets/screenshots/second-ss.png)
 
 ### Advanced Features
@@ -179,4 +179,13 @@ npm install
 ```
 npm start
 ```
+
+## To run restaurant app on MOBILE
+1. First search on Google "how to turn on USB debugging on android mobile"
+2. Turn on USB Debugging like the intruction
+3. cd customer (cd enatega-multivendor-restaurant)
+4. plug in the cable between laptop (or PC) - which is not only charging
+5. run "npx expo start run:android"
+6. You can turn of USb debugging and plug out the cable and run app to use
+
 

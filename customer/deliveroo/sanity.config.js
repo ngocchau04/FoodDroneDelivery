@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'Deliveroo',
 
-  projectId: 'qxr3am6t',
+  projectId: '3glkq9kp',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
